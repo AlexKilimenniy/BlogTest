@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+    <title>Блог</title>
+{% endblock %}
+{% block body %}
+
+    <h1>Hello!!!</h1>
+    <a href="{% url 'create_post' %}"><button>Новая статья</button></a>
+
+    {% for post_m in post_massages %}
+
+        <h5>{{ post_m.autor }}</h5>
+        <h3>{{ post_m.title }}</h3>
+        <p>{{ post_m.text }}</p>
+        <a href="{% url "post_like" post_m.id %} "><button>{{ post_m.likes }}</button></a>
+        <a href="{% url "new_comment" pk=post_m.id  %}"><button>Оставить коммент</button></a>
+        {% for comment in comments %}
+            {% if comment.post == post_m %}
+                <p>{{ comment.user }}{{ comment.date }}</p>
+                <p>{{ comment.text }}</p>
+            {% endif %}
+        {% endfor %}
+
+    {% endfor %}
+
+{% endblock %}
