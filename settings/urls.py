@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from blog import urls as blog_urls
+from blog.api.urls import router as api_route
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -24,4 +25,8 @@ urlpatterns = [
 
     # Blog
     url(r'^blog/', include(blog_urls)),
+
+    #API
+    url(r'^api/', include(api_route.urls)),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
