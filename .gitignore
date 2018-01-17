@@ -1,0 +1,37 @@
+### Python template
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyc
+*.xml
+# C extensions
+*.so
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Django stuff:
+*.log
+
+
+*.iml
+.idea/
+
+# Local DB
+db.sqlite3
+
+# By project
+/static
+/db.sqlite3
+
